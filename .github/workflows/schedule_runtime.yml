@@ -36,6 +36,6 @@ jobs:
           git config --local user.email "abdulhadijurimi@gmail.com"
           git config --local user.name "hadijurimii"
           git add .
-          git diff-index --quiet HEAD || git commit -m "Update time [skip ci]"
+          git diff-index --quiet HEAD || git commit -m "Update time scheduled"
           git pull --rebase
           git push

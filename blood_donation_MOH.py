@@ -10,6 +10,7 @@ import asyncio
 from telegram import Bot
 from telegram.error import TelegramError
 from dotenv import load_dotenv
+import pytz
 
 load_dotenv()
 TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
@@ -28,7 +29,8 @@ df_retention = pd.read_parquet('https://dub.sh/ds-data-granular')
 
 async def send_to_telegram():
     # Get the current time
-    current_time = datetime.now()
+    timezone = pytz.timezone('Asia/Singapore')  # You can use 'Asia/Hong_Kong' as well
+    current_time = datetime.now(timezone)
     formatted_time = current_time.strftime("%Y-%m-%d %H:%M:%S")
 
     # Telegram Bot settings
