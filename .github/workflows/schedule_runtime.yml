@@ -24,11 +24,12 @@ jobs:
           pip install -r requirements.txt
   
       - name: Run Python Script
-        run: python3 blood_donation_MOH.py
-
+      
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_GROUP_ID: ${{ secrets.TELEGRAM_GROUP_ID }}
+        
+        run: python3 blood_donation_MOH.py
   
       - name: Commit and Push Changes
         run: |
