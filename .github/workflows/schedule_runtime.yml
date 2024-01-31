@@ -1,0 +1,29 @@
+name: Schedule Runtime
+
+on:
+    schedule:
+      - cron: '10 0 * * *'  # Run every minute
+
+env:
+  telegram_id: ${{ secrets.TELEGRAM_SECRET}}
+  telegram_group_id: ${{ secrets.TELEGRAM_GROUP_ID }}
+
+jobs:
+    update_time:
+      runs-on: ubuntu-latest
+  
+      steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+  
+      - name: Run Python Script
+        run: python3 blood donation data.py
+  
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "abdulhadijurimi@gmail.com"
+          git config --local user.name "hadijurimii"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Update time [skip ci]"
+          git pull --rebase
+          git push
