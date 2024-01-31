@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v2
   
       - name: Run Python Script
-        run: python3 blood donation data.py
+        run: python3 blood_donation_MOH.py
   
       - name: Commit and Push Changes
         run: |
