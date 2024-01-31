@@ -3,6 +3,7 @@ name: Schedule Runtime
 on:
     schedule:
       - cron: '10 0 * * *'  # Run every minute
+    workflow_dispatch:
 
 env:
   telegram_id: ${{ secrets.TELEGRAM_SECRET}}
