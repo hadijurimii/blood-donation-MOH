@@ -5,9 +5,7 @@ on:
       - cron: '10 0 * * *'  # Run every minute
     workflow_dispatch:
 
-env:
-  telegram_id: ${{ secrets.TELEGRAM_SECRET}}
-  telegram_group_id: ${{ secrets.TELEGRAM_GROUP_ID }}
+
 
 jobs:
     update_time:
@@ -27,6 +25,10 @@ jobs:
   
       - name: Run Python Script
         run: python3 blood_donation_MOH.py
+
+        env:
+          telegram_secret: ${{ secrets.TELEGRAM_SECRET}}
+          telegram_group_id: ${{ secrets.TELEGRAM_GROUP_ID }}
   
       - name: Commit and Push Changes
         run: |
