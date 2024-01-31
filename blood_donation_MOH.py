@@ -11,7 +11,7 @@ from telegram import Bot
 from telegram.error import TelegramError
 
 
-TELEGRAM_TOKEN = os.environ.get('TELEGRAM_TOKEN')
+TELEGRAM_TOKEN = os.environ.get('TELEGRAM_SECRET')
 TELEGRAM_GROUP_ID = os.environ.get('TELEGRAM_GROUP_ID')
 
 df_don_state = pd.read_csv('https://raw.githubusercontent.com/MoH-Malaysia/data-darah-public/main/donations_state.csv')
