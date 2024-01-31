@@ -362,6 +362,6 @@ os.makedirs(save_dir, exist_ok=True)
 plt.savefig(os.path.join(save_dir, 'Regularity_Voluntary_Donors.jpg'), format="jpg", bbox_inches='tight')
 
 
-# asyncio.run(send_to_telegram())
+asyncio.run(send_to_telegram())
 
 
