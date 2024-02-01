@@ -2,7 +2,7 @@ name: Schedule Runtime
 
 on:
     schedule:
-      - cron: '1 * * * *' 
+      - cron: '* 12 * * *' 
     workflow_dispatch:
 
 
