@@ -2,7 +2,7 @@ name: Schedule Runtime
 
 on:
     schedule:
-      - cron: '* 12 * * *' 
+      #Stopping Cron Job
     workflow_dispatch:
 
 
